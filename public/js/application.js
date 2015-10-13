@@ -33,6 +33,8 @@ $(document).ready(function() {
       url: url
     }).done(function(response) {
       $div.append(response)
+    }).fail(function(response) {
+      alert("Try again!");
     })
   })
 });
