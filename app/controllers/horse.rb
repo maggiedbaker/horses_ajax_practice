@@ -5,19 +5,32 @@ end
 
 get '/horses/new' do
   @horse = Horse.new
-  erb :"/horses/new"
+  if request.xhr?
+    erb :"/horses/_new_horse_form", layout: false
+  else
+    erb :"/horses/new"
+  end
 end
 
 post '/horses' do
   @horse = Horse.new(params[:horse])
   if @horse.save
-    redirect '/horses'
+    if request.xhr?
+      erb :'/horses/_horse', locals: {horse: @horse}, layout: false
+    else
+      redirect '/horses'
+    end
   else
+
     erb :"/horses/new"
   end
 end
 
 get '/horses/:id' do
   @horse = Horse.find(params[:id])
-  erb :"/horses/show"
+  if request.xhr?
+    erb :'/horses/_horse_info', locals: {horse: @horse}, layout: false
+  else
+    erb :"/horses/show"
+  end
 end
