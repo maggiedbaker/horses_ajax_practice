@@ -1,3 +1,7 @@
+## AJAX Practice
+
+This is a Dev Bootcamp challenge where I used AJAX to enhance a simple, pre-made site about horses in the Sinatra framework. View the original challenge instructions below, and view my Javascript code in Public > js > application.js.
+
 ## AJAX Sinatra Challenge
 
 In this challenge, you will need to display your AJAX skills by AJAXing a few parts of an existing application. This is a lovely application that keeps track of Penelope's horses.
